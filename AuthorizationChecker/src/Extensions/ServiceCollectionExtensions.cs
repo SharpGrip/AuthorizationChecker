@@ -12,7 +12,7 @@ namespace SharpGrip.AuthorizationChecker.Extensions
             Action<AuthorizationCheckerOptions>? setupOptions = null)
         {
             services.AddOptions();
-            services.AddSingleton<IAuthorizationChecker, AuthorizationChecker>();
+            services.AddScoped<IAuthorizationChecker, AuthorizationChecker>();
 
             var voterTypes = Assembly.GetCallingAssembly().GetTypes()
                 .Where(type => type.GetInterfaces().Contains(typeof(IVoter)) && type.IsClass && !type.IsAbstract);
