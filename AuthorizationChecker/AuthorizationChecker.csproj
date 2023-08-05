@@ -1,24 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
         <RootNamespace>SharpGrip.AuthorizationChecker</RootNamespace>
-        <Nullable>enable</Nullable>
-        <LangVersion>8.0</LangVersion>
+    </PropertyGroup>
+
+    <PropertyGroup>
         <AssemblyName>SharpGrip.AuthorizationChecker</AssemblyName>
-        <PackageVersion>1.0.0</PackageVersion>
-        <Company>SharpGrip</Company>
         <PackageId>SharpGrip.AuthorizationChecker</PackageId>
-        <Authors>SharpGrip</Authors>
         <Title>SharpGrip AuthorizationChecker</Title>
         <Description>SharpGrip AuthorizationChecker is a security system that provides an easy and effective way to check access on objects.</Description>
-        <Summary>SharpGrip AuthorizationChecker is a security system that provides an easy and effective way to check access on objects.</Summary>
-        <Copyright>SharpGrip</Copyright>
-        <License>MIT</License>
-        <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <RepositoryUrl>https://github.com/SharpGrip/AuthorizationChecker</RepositoryUrl>
-        <PackageProjectUrl>https://sharpgrip.net</PackageProjectUrl>
-        <RepositoryType>git</RepositoryType>
+        <PackageTags>sharpgrip;authorization;authorization-checker</PackageTags>
     </PropertyGroup>
 
     <ItemGroup>
