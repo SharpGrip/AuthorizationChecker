@@ -6,7 +6,7 @@
         <Nullable>enable</Nullable>
         <LangVersion>8.0</LangVersion>
         <AssemblyName>SharpGrip.AuthorizationChecker</AssemblyName>
-        <PackageVersion>1.0.0-alpha2</PackageVersion>
+        <PackageVersion>1.0.0</PackageVersion>
         <Company>SharpGrip</Company>
         <PackageId>SharpGrip.AuthorizationChecker</PackageId>
         <Authors>SharpGrip</Authors>
