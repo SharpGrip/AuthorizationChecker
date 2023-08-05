@@ -2,8 +2,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorizationChecker", "AuthorizationChecker\AuthorizationChecker.csproj", "{AC3938B6-65C4-48AE-ACCE-E4B4BD73C0EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWebApp", "TestWebApp\TestWebApp.csproj", "{AA5B9F5E-7822-4774-A92E-A95866A19DD0}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,9 +12,5 @@ Global
 		{AC3938B6-65C4-48AE-ACCE-E4B4BD73C0EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC3938B6-65C4-48AE-ACCE-E4B4BD73C0EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC3938B6-65C4-48AE-ACCE-E4B4BD73C0EF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AA5B9F5E-7822-4774-A92E-A95866A19DD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AA5B9F5E-7822-4774-A92E-A95866A19DD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AA5B9F5E-7822-4774-A92E-A95866A19DD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AA5B9F5E-7822-4774-A92E-A95866A19DD0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

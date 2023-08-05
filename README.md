@@ -1,5 +1,14 @@
 # SharpGrip AuthorizationChecker [![NuGet](https://img.shields.io/nuget/v/SharpGrip.AuthorizationChecker)](https://www.nuget.org/packages/SharpGrip.AuthorizationChecker)
 
+## Builds
+[![AuthorizationChecker [Build]](https://github.com/SharpGrip/AuthorizationChecker/actions/workflows/Build.yaml/badge.svg)](https://github.com/SharpGrip/AuthorizationChecker/actions/workflows/Build.yaml)
+
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=SharpGrip_AuthorizationChecker&metric=alert_status)](https://sonarcloud.io/summary/overall?id=SharpGrip_AuthorizationChecker) \
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=SharpGrip_AuthorizationChecker&metric=sqale_rating)](https://sonarcloud.io/summary/overall?id=SharpGrip_AuthorizationChecker) \
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=SharpGrip_AuthorizationChecker&metric=reliability_rating)](https://sonarcloud.io/summary/overall?id=SharpGrip_AuthorizationChecker) \
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=SharpGrip_AuthorizationChecker&metric=security_rating)](https://sonarcloud.io/summary/overall?id=SharpGrip_AuthorizationChecker) \
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=SharpGrip_AuthorizationChecker&metric=coverage)](https://sonarcloud.io/summary/overall?id=SharpGrip_AuthorizationChecker)
+
 ## Introduction
 SharpGrip AuthorizationChecker is a security system that provides an easy and effective way to check access on objects.
 

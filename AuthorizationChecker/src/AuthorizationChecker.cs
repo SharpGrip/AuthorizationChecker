@@ -15,6 +15,7 @@ namespace SharpGrip.AuthorizationChecker
         public AuthorizationChecker(IServiceProvider serviceProvider, IOptions<AuthorizationCheckerOptions> options)
         {
             this.serviceProvider = serviceProvider;
+
             AccessDecisionStrategy = options.Value.AccessDecisionStrategy;
             UnanimousVoteAllowIfAllAbstain = options.Value.UnanimousVoteAllowIfAllAbstain;
         }
@@ -49,14 +50,10 @@ namespace SharpGrip.AuthorizationChecker
             return GetAuthorizationResult(mode, subject, user, AccessDecisionStrategy);
         }
 
-        public IAuthorizationResult<TSubject> GetAuthorizationResult<TSubject>(
-            string mode,
-            TSubject subject,
-            AccessDecisionStrategy accessDecisionStrategy)
+        public IAuthorizationResult<TSubject> GetAuthorizationResult<TSubject>(string mode, TSubject subject, AccessDecisionStrategy accessDecisionStrategy)
         {
             var voterServices = serviceProvider.GetServices<IVoter<TSubject>>();
-            var authorizationResult =
-                new AuthorizationResult<TSubject>(mode, subject, accessDecisionStrategy, UnanimousVoteAllowIfAllAbstain);
+            var authorizationResult = new AuthorizationResult<TSubject>(mode, subject, accessDecisionStrategy, UnanimousVoteAllowIfAllAbstain);
 
             foreach (var voterService in voterServices)
             {
@@ -69,15 +66,10 @@ namespace SharpGrip.AuthorizationChecker
             return authorizationResult;
         }
 
-        public IAuthorizationResult<TSubject> GetAuthorizationResult<TSubject, TUser>(
-            string mode,
-            TSubject subject,
-            TUser user,
-            AccessDecisionStrategy accessDecisionStrategy)
+        public IAuthorizationResult<TSubject> GetAuthorizationResult<TSubject, TUser>(string mode, TSubject subject, TUser user, AccessDecisionStrategy accessDecisionStrategy)
         {
             var voterServices = serviceProvider.GetServices<IVoter<TSubject, TUser>>();
-            var authorizationResult =
-                new AuthorizationResult<TSubject>(mode, subject, accessDecisionStrategy, UnanimousVoteAllowIfAllAbstain);
+            var authorizationResult = new AuthorizationResult<TSubject>(mode, subject, accessDecisionStrategy, UnanimousVoteAllowIfAllAbstain);
 
             foreach (var voterService in voterServices)
             {

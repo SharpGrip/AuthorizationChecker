@@ -54,7 +54,7 @@ namespace SharpGrip.AuthorizationChecker
         /// <typeparam name="TSubject">The subject's Type</typeparam>
         /// <returns>The authorization result.</returns>
         public IAuthorizationResult<TSubject> GetAuthorizationResult<TSubject>(string mode, TSubject subject);
-        
+
         /// <summary>
         /// Returns the authorization result.
         /// </summary>
@@ -74,9 +74,8 @@ namespace SharpGrip.AuthorizationChecker
         /// <param name="accessDecisionStrategy">The access decision strategy.</param>
         /// <typeparam name="TSubject">The subject's Type</typeparam>
         /// <returns>The authorization result.</returns>
-        public IAuthorizationResult<TSubject> GetAuthorizationResult<TSubject>(string mode, TSubject subject,
-            AccessDecisionStrategy accessDecisionStrategy);
-        
+        public IAuthorizationResult<TSubject> GetAuthorizationResult<TSubject>(string mode, TSubject subject, AccessDecisionStrategy accessDecisionStrategy);
+
         /// <summary>
         /// Returns the authorization result.
         /// </summary>
@@ -87,7 +86,6 @@ namespace SharpGrip.AuthorizationChecker
         /// <typeparam name="TSubject">The subject's Type</typeparam>
         /// <typeparam name="TUser">The user's Type</typeparam>
         /// <returns>The authorization result.</returns>
-        public IAuthorizationResult<TSubject> GetAuthorizationResult<TSubject, TUser>(string mode, TSubject subject, TUser user,
-            AccessDecisionStrategy accessDecisionStrategy);
+        public IAuthorizationResult<TSubject> GetAuthorizationResult<TSubject, TUser>(string mode, TSubject subject, TUser user, AccessDecisionStrategy accessDecisionStrategy);
     }
 }

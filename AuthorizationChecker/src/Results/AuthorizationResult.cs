@@ -12,8 +12,7 @@ namespace SharpGrip.AuthorizationChecker.Results
         public bool UnanimousVoteAllowIfAllAbstain { get; }
         public IDictionary<Type, bool> Results { get; } = new Dictionary<Type, bool>();
 
-        public AuthorizationResult(string mode, TSubject subject, AccessDecisionStrategy accessDecisionStrategy,
-            bool unanimousVoteAllowIfAllAbstain)
+        public AuthorizationResult(string mode, TSubject subject, AccessDecisionStrategy accessDecisionStrategy, bool unanimousVoteAllowIfAllAbstain)
         {
             Mode = mode;
             Subject = subject;

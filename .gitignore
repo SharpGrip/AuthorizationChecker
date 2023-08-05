@@ -1,6 +1,7 @@
 .idea/
-.DS_Store
+.nuget/
+NuGet/
 [Oo]bj/
 [Bb]in/
-Test/
-TestWebApp/
+.DS_Store
+*.DotSettings.user

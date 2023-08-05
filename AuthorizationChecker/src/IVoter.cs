@@ -9,7 +9,7 @@ namespace SharpGrip.AuthorizationChecker
         /// <param name="subject">The subject.</param>
         /// <returns>True if this <see cref="IVoter{TSubject}"/> instance will vote, False otherwise.</returns>
         public bool WillVote(string mode, TSubject subject);
-        
+
         /// <summary>
         /// Votes on the mode and subject.
         /// </summary>
@@ -17,8 +17,8 @@ namespace SharpGrip.AuthorizationChecker
         /// <param name="subject">The subject.</param>
         /// <returns>True if this <see cref="IVoter{TSubject}"/> instance allows access, False otherwise.</returns>
         public bool Vote(string mode, TSubject subject);
-    }    
-    
+    }
+
     public interface IVoter<in TSubject, in TUser> : IVoter
     {
         /// <summary>
@@ -29,7 +29,7 @@ namespace SharpGrip.AuthorizationChecker
         /// <param name="user">The user.</param>
         /// <returns>True if this <see cref="IVoter{TSubject, TUser}"/> instance will vote, False otherwise.</returns>
         public bool WillVote(string mode, TSubject subject, TUser user);
-        
+
         /// <summary>
         /// Votes on the mode and subject.
         /// </summary>

@@ -8,14 +8,12 @@ namespace SharpGrip.AuthorizationChecker.Extensions
 {
     public static class ServiceCollectionExtensions
     {
-        public static IServiceCollection AddAuthorizationChecker(this IServiceCollection services,
-            Action<AuthorizationCheckerOptions>? setupOptions = null)
+        public static IServiceCollection AddAuthorizationChecker(this IServiceCollection services, Action<AuthorizationCheckerOptions>? setupOptions = null)
         {
             services.AddOptions();
             services.AddScoped<IAuthorizationChecker, AuthorizationChecker>();
 
-            var voterTypes = Assembly.GetCallingAssembly().GetTypes()
-                .Where(type => type.GetInterfaces().Contains(typeof(IVoter)) && type.IsClass && !type.IsAbstract);
+            var voterTypes = Assembly.GetCallingAssembly().GetTypes().Where(type => type.GetInterfaces().Contains(typeof(IVoter)) && type.IsClass && !type.IsAbstract);
 
             foreach (var voterType in voterTypes)
             {
