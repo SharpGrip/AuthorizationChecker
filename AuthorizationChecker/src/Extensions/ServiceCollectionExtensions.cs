@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,11 +14,14 @@ namespace SharpGrip.AuthorizationChecker.Extensions
             services.AddOptions();
             services.AddScoped<IAuthorizationChecker, AuthorizationChecker>();
 
-            var voterTypes = Assembly.GetCallingAssembly().GetTypes().Where(type => type.GetInterfaces().Contains(typeof(IVoter)) && type.IsClass && !type.IsAbstract);
+            var voterTypes = AppDomain.CurrentDomain.GetAssemblies().SelectMany(LoadTypes).Where(type => typeof(IVoter).IsAssignableFrom(type) && type.IsClass && type.IsPublic && !type.IsAbstract);
 
             foreach (var voterType in voterTypes)
             {
-                services.AddTransient(voterType.GetInterfaces().First(type => type.IsGenericType), voterType);
+                foreach (var voterInterface in voterType.GetInterfaces().Where(type => type.IsGenericType && type.GetGenericTypeDefinition() == typeof(IVoter<>)))
+                {
+                    services.AddTransient(voterInterface, voterType);
+                }
             }
 
             if (setupOptions != null)
@@ -26,6 +30,18 @@ namespace SharpGrip.AuthorizationChecker.Extensions
             }
 
             return services;
+        }
+
+        private static IEnumerable<Type> LoadTypes(Assembly assembly)
+        {
+            try
+            {
+                return assembly.GetTypes();
+            }
+            catch (ReflectionTypeLoadException reflectionTypeLoadException)
+            {
+                return reflectionTypeLoadException.Types.Where(type => type != null);
+            }
         }
     }
 }
