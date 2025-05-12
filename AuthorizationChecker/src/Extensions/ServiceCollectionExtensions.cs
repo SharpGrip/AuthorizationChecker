@@ -18,7 +18,20 @@ namespace SharpGrip.AuthorizationChecker.Extensions
 
             foreach (var voterType in voterTypes)
             {
-                foreach (var voterInterface in voterType.GetInterfaces().Where(type => type.IsGenericType && type.GetGenericTypeDefinition() == typeof(IVoter<>)))
+                var voterTypeInterfaces = new HashSet<Type>();
+                var currentType = voterType;
+
+                while (currentType != null && currentType != typeof(object))
+                {
+                    foreach (var @interface in currentType.GetInterfaces())
+                    {
+                        voterTypeInterfaces.Add(@interface);
+                    }
+
+                    currentType = currentType.BaseType;
+                }
+
+                foreach (var voterInterface in voterTypeInterfaces.Where(type => type.IsGenericType))
                 {
                     services.AddTransient(voterInterface, voterType);
                 }
